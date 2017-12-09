@@ -12,16 +12,24 @@ public class Game {
     System.out.println("Are you ready to go on an adventure?");
     polarAnswer = in.next();
 
-    if(polar_answer.equals("yes") {
+    // TODO: Sort out the logic! At the moment, the do/while block is working as it should
+    // but the if statement checking against the polarAnswer is crashing the programme!
+    
+    do {
+
+      System.out.println("Please only respond with 'yes' or 'no'");
+      System.out.println("Are you ready to go on an adventure?");
+      polarAnswer = in.next();
+
+    }
+      while (!polarAnswer.equalsIgnoreCase("yes") || !polarAnswer.equalsIgnoreCase("no"));
+
+    if(polarAnswer.equalsIgnoreCase("yes")) {
       System.out.println("Great, " + playerName + "! Let's get started!");
     }
-    else if(polar_answer.equals("no"){
-      System.out.println("Okay, " + playerName + ". Maybe we can go another time!\n See you later!");
+    else if(polarAnswer.equalsIgnoreCase("no")) {
+      System.out.println("Okay, " + playerName + ". Maybe we can go another time!\nSee you later!");
     }
-    /* Replace with a do/while loop for this condition so that after being prompeted to only
-    answer yes or no, the user is returned to 'Are you ready to go on an adventure?' */
-    else {
-      System.out.println("Please only respond with 'yes' or 'no'");
-    }
+
   }
 }
