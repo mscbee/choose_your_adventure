@@ -1,39 +1,41 @@
+package evermore;
+
 import java.util.Scanner;
 
 public class Game {
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    String playerName, polarAnswer;
-    Scanner in = new Scanner(System.in);
-    System.out.println("I'm Alice. What's your name? ");
-    playerName = in.next();
+        Character Alice = new Character();
+        Character Player = new Character();
 
-    System.out.println("Hello, " + playerName + ". Welcome to the World of Evermore.\n");
-    System.out.println("Are you ready to go on an adventure?");
-    polarAnswer = in.next();
+        Scanner in = new Scanner(System.in);
 
-    // TODO: Sort out the logic! At the moment, the do/while block is working as it should
-    // but the if statement checking against the polarAnswer is crashing the programme!
+        Alice.type("I'm Alice. What's your name? \n");
+        Player.name = in.next();
+
+        Alice.type("Hello, " + Player.name + ". Welcome to the World of Evermore. ");
+
+        String adventure = "Are you ready to go on an adventure? \n";
+
+        Alice.type(adventure);
+
+        String polarAnswer = in.next();
 
 
-    if(polarAnswer.equalsIgnoreCase("yes")) {
-      System.out.println("Great, " + playerName + "! Let's get started!");
-    }
-    else if(polarAnswer.equalsIgnoreCase("no")) {
-      System.out.println("Okay, " + playerName + ". Maybe we can go another time!\nSee you later!");
-      break;
-    }
-    else {
-        while (!polarAnswer.equalsIgnoreCase("yes") || !polarAnswer.equalsIgnoreCase("no"))
+        // TODO: Sort out the loop! At the moment, the do/while block isn't working as it should
+        // but the if statement checking against the polarAnswer is crashing the programme!
+
+        switch(polarAnswer)
         {
-
-        System.out.println("Please only respond with 'yes' or 'no'");
-        System.out.println("Are you ready to go on an adventure?");
-
-        // polarAnswer = in.next();
-
-      }
+            case("yes"):
+                Alice.type("Great, " + Player.name + "! Let's get started!");
+                break;
+            case("no"):
+                Alice.type("Okay, " + Player.name + ". Maybe we can go another time!\n" + "See you later!");
+                break;
+            default:
+                Alice.type("Please only respond with 'yes' or 'no'");
+        }
     }
-
-  }
 }
+
